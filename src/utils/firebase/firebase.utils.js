@@ -30,7 +30,7 @@ const firebaseConfig = {
   measurementId: "G-8FSQJP0V30"
 };
 
-const firebaseApp = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -47,7 +47,6 @@ export const signInWithGoogleRedirect = () =>
 export const db = getFirestore();
 
 export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
-  console.log(objectsToAdd)
   const collectionRef = collection(db, collectionKey);
   const batch = writeBatch(db);
 
